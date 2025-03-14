@@ -25,23 +25,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-
       <script dangerouslySetInnerHTML={{
-        __html: `
-<script>!function(){
-                var d=function d(a) {
-                    for(var e=arguments.length,n=new Array(e>1?e-1:0),i=1;i<e;i++)
-                        n[i-1]=arguments[i];
-                    d.queue.push([a].concat(n))
-                };
-                d.queue=[],window.dadk=window.dadk||d;
-                var a=document.createElement("script");
-                a.src = "undefined" != typeof URLSearchParams ? 'https://unpkg.com/@dcard/web-ad-tracking-sdk/build/dadk.iife.js' : 'https://unpkg.com/@dcard/web-ad-tracking-sdk/build/outdated-dadk.iife.js',
-                document.head.appendChild(a),
-                window.dadk("init", "GBZ-aaBUuD06UpTkOJzgC"),
-                window.dadk("track", "PageView")}();
-</script>
-        `
+        __html: `(function () {
+          var d = function d(a) {
+              for (var e = arguments.length, n = new Array(e > 1 ? e - 1 : 0), i = 1; i < e; i++)
+                  n[i - 1] = arguments[i];
+              d.queue.push([a].concat(n))
+          };
+          d.queue = [], window.dadk = window.dadk || d;
+          var a = document.createElement("script");
+          a.src = "undefined" != typeof URLSearchParams ? 'https://unpkg.com/@dcard/web-ad-tracking-sdk/build/dadk.iife.js' : 'https://unpkg.com/@dcard/web-ad-tracking-sdk/build/outdated-dadk.iife.js',
+              document.head.appendChild(a),
+              window.dadk("init", "GBZ-aaBUuD06UpTkOJzgC"),
+              window.dadk("track", "PageView");
+      })();`
       }}></script>
       </head>
       <body
