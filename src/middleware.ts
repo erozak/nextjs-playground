@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export function middleware(request: NextRequest) {
 
   const cspHeader = `
-    script-src 'self' https://pixel.dcard.tw https://unpkg.com/@dcard/web-ad-tracking-sdk https://assets.dcard.tw/scripts/web-ad-tracking-sdk;
+    script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pixel.dcard.tw https://unpkg.com/@dcard/web-ad-tracking-sdk https://assets.dcard.tw/scripts/web-ad-tracking-sdk;
     img-src 'self' blob: data: https://pixel.dcard.tw;
 `
   // Replace newline characters and spaces
